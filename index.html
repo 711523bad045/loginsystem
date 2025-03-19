@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food App</title>
+    <link rel="stylesheet" href="kjbuj">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Food App</h2>
+        <button onclick="showLogin()">Login</button>
+        <button onclick="showRegister()">Register</button>
+        <button onclick="guestLogin()">Guest Login</button>
+    </div>
+
+    <div class="container" id="loginForm" style="display: none;">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Enter your email">
+        <input type="password" id="loginPassword" placeholder="Enter your password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div class="container" id="registerForm" style="display: none;">
+        <h2>Register</h2>
+        <input type="text" id="regName" placeholder="Full Name">
+        <input type="text" id="regMobile" placeholder="Mobile Number">
+        <input type="email" id="regEmail" placeholder="Email">
+        <input type="password" id="regPassword" placeholder="Password">
+        <button onclick="register()">Register</button>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+        }
+        function showRegister() {
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('loginForm').style.display = 'none';
+        }
+        function guestLogin() {
+            alert("You are logged in as a guest.");
+        }
+        function login() {
+            let email = document.getElementById('loginEmail').value;
+            let password = document.getElementById('loginPassword').value;
+            alert("Logging in with " + email);
+        }
+        function register() {
+            let name = document.getElementById('regName').value;
+            let mobile = document.getElementById('regMobile').value;
+            let email = document.getElementById('regEmail').value;
+            let password = document.getElementById('regPassword').value;
+            alert("Registered successfully! Welcome " + name);
+        }
+    </script>
+</body>
+</html>
